@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body{
@@ -17,6 +16,7 @@ body{
     flex-wrap: wrap;
     width: 32em;       
     height: 32em;
+    border: 5px solid black;
 }
 
 .box{
