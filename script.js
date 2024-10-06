@@ -1,11 +1,16 @@
 const container = document.querySelector(".container");
 const getSizeBtn = document.querySelector(".get-size-btn");
 
+generateGrid(30);
+addMouseListeners();
+
 getSizeBtn.addEventListener("click", () =>{
     const size = prompt("Enter pixel size");
+    if (size < 100){
     clearGrid();
     generateGrid(size);
     addMouseListeners();
+    }
 })
 
 function generateGrid(size){
@@ -45,10 +50,14 @@ function addMouseListeners(){
     children.forEach(child =>{
         child.addEventListener("mouseover" ,function (event) {
             if(isMouseDown){
-            event.target.style.backgroundColor = "red";
+            event.target.style.backgroundColor = `rgb(${getRandom()},${getRandom()},${getRandom()})`;
             }
         } )
     })
     
+}
+
+function getRandom(){
+    return Math.floor(Math.random() * 256);
 }
 
